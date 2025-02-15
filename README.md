@@ -1,30 +1,14 @@
 # Ecommerce Backend
 
-Este es el backend de una aplicación de ecommerce desarrollada con Node.js, Express, MongoDB y JWT para autenticación.
+Este es el backend de una aplicación de ecommerce desarrollada con Node.js, Express, MongoDB.
 
 ## Instalación
 
 1. Clona el repositorio:
     ```bash
-    git clone <URL_DEL_REPOSITORIO>
-    cd ecommerce-backend
-    ```
-
-2. Instala las dependencias:
-    ```bash
+    git clone https://github.com/BgSoft29/Hackaton-Final-Backend.git
     npm install
-    ```
-
-3. Configura las variables de entorno en un archivo [.env](http://_vscodecontentref_/12):
-    ```
-    PORT=4000
-    MONGO_URI=your_mongodb_connection_string
-    JWT_SECRET=your_jwt_secret
-    ```
-
-4. Inicia el servidor:
-    ```bash
-    node [app.js](http://_vscodecontentref_/13)
+    npm start
     ```
 
 ## Endpoints
@@ -33,6 +17,7 @@ Este es el backend de una aplicación de ecommerce desarrollada con Node.js, Exp
 
 - `POST /api/users/register`: Registrar un nuevo usuario.
 - `POST /api/users/login`: Iniciar sesión de un usuario.
+- `GET /api/users/`: Obtener todos los usuarios.
 
 ### Productos
 

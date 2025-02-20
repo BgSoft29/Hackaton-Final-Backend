@@ -3,7 +3,7 @@ const bcrypt = require('bcryptjs');
 const generateToken = require('../utils/jwt');
 
 exports.registerUser = async (req, res) => {
-    const { name, email, password } = req.body;
+    const { name, email, password, role } = req.body;
 
     try {
         const userExists = await User.findOne({ email });
@@ -16,6 +16,7 @@ exports.registerUser = async (req, res) => {
             name,
             email,
             password,
+            role
         });
 
         const token = generateToken(user._id);
@@ -24,6 +25,7 @@ exports.registerUser = async (req, res) => {
             _id: user._id,
             name: user.name,
             email: user.email,
+            role: user.role,
             token,
         });
     } catch (error) {

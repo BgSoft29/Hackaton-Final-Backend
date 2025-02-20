@@ -8,6 +8,7 @@ const orderRoutes = require("./routes/orderRoutes");
 const categoryRoutes = require("./routes/categoryRoutes");
 const couponRoutes = require("./routes/couponRoutes");
 const cartRoutes = require("./routes/cartRoutes");
+const paymentRoutes = require("./routes/paymentRoutes");
 const errorHandler = require("./middlewares/errorMiddleware");
 
 // Configurar dotenv para variables de entorno del proyecto
@@ -27,6 +28,7 @@ app.use("/api/orders", orderRoutes);
 app.use("/api/categories", categoryRoutes);
 app.use("/api/coupons", couponRoutes);
 app.yse("/api/cart", cartRoutes);
+app.use("/api/payment", paymentRoutes);
 
 // Conexión de base de datos
 connectDB();

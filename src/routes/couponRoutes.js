@@ -12,7 +12,7 @@ const router = express.Router();
 
 router.get('/', protect, admin, getCoupons);
 router.post('/', protect, admin, createCoupon);
-router.post('/:id', protect, admin, getCouponById);
+router.get('/:id', protect, admin, getCouponById);
 router.put('/:id', protect, admin, updateCoupon);
 router.delete('/:id', protect, admin, deleteCoupon);
 

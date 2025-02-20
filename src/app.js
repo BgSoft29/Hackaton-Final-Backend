@@ -15,12 +15,12 @@ const errorHandler = require("./middlewares/errorMiddleware");
 // Configurar dotenv para variables de entorno del proyecto
 dotenv.config();
 
-//Configurar cors
-app.use(cors());
-
 // Inicializar express
 const app = express();
 const PORT = process.env.PORT || 4000;
+
+//Configurar cors
+app.use(cors());
 
 // Midlewares
 app.use(express.json());

@@ -13,7 +13,7 @@ exports.createProduct = async (req, res) => {
         });
 
         await product.save();
-        socket.emit('productoCreado', product);
+        // socket.emit('productoCreado', product);
         res.status(201).json(product);
     } catch (error) {
         res.status(500).json({ message: error.message });
@@ -60,7 +60,7 @@ exports.updateProduct = async (req, res) => {
         product.stock = stock || product.stock;
 
         await product.save();
-        socket.emit('productoActualizado', product);
+        // socket.emit('productoActualizado', product);
         res.json(product);
     } catch (error) {
         res.status(500).json({ message: error.message });
@@ -75,8 +75,7 @@ exports.deleteProduct = async (req, res) => {
             return res.status(404).json({ message: 'Product not found' });
         }
 
-        await product.remove();
-        socket.emit('productoEliminado', product);
+        await Product.deleteOne({ _id: req.params.id });
         res.json({ message: 'Product removed' });
     } catch (error) {
         res.status(500).json({ message: error.message });

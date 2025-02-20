@@ -44,6 +44,13 @@ const io = require("socket.io")(server, {
     }
 });
 
+// Configurar cors
+app.use(cors({
+    origin: "http://127.0.0.1:5500", // Reemplaza con la URL de tu frontend
+    methods: ["GET", "POST", "PUT", "DELETE"],
+    credentials: true
+}));
+
 // Configurar eventos de socket.io
 io.on("connection", (socket) => {
     console.log("Nuevo cliente conectado");

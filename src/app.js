@@ -1,3 +1,4 @@
+const cors = require("cors");
 const connectDB = require("./config/db");
 const express = require("express");
 const mongoose = require("mongoose");
@@ -13,6 +14,9 @@ const errorHandler = require("./middlewares/errorMiddleware");
 
 // Configurar dotenv para variables de entorno del proyecto
 dotenv.config();
+
+//Configurar cors
+app.use(cors());
 
 // Inicializar express
 const app = express();

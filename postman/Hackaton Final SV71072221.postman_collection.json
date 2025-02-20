@@ -1,0 +1,882 @@
+{
+	"info": {
+		"_postman_id": "10a41b25-1b36-4f6c-b53d-1b1abd267714",
+		"name": "Hackaton Final SV71072221",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "18512359"
+	},
+	"item": [
+		{
+			"name": "Registrar usuario",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"name\": \"Roberto Pineda\",\r\n  \"email\": \"rpineda@gmail.com\",\r\n  \"password\": \"contraseñadeprueba\",\r\n  \"role\": \"user\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://hackaton-final-backend-production.up.railway.app/api/users/register",
+					"protocol": "https",
+					"host": [
+						"hackaton-final-backend-production",
+						"up",
+						"railway",
+						"app"
+					],
+					"path": [
+						"api",
+						"users",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Iniciar sesión de usuario",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"eespinoza12@gmail.com\",\r\n    \"password\": \"contraseñadeprueba\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://hackaton-final-backend-production.up.railway.app/api/users/login",
+					"protocol": "https",
+					"host": [
+						"hackaton-final-backend-production",
+						"up",
+						"railway",
+						"app"
+					],
+					"path": [
+						"api",
+						"users",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Modificar Usuario",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3Yjc3NDcwMmZlNzYxMzVmY2Y0NDU5NiIsImlhdCI6MTc0MDA3NzMwOSwiZXhwIjoxNzQyNjY5MzA5fQ.lljlQJS80G4dprRtAUbCrb3Hzuym3p8dBxDpOvMECzY",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Greta Butgenbach G\",\r\n    \"email\": \"gretabg21@gmail.com\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://hackaton-final-backend-production.up.railway.app/api/users/profile",
+					"protocol": "https",
+					"host": [
+						"hackaton-final-backend-production",
+						"up",
+						"railway",
+						"app"
+					],
+					"path": [
+						"api",
+						"users",
+						"profile"
+					]
+				},
+				"description": "Requiere que el usuario logeado tenga perfil de administrador"
+			},
+			"response": []
+		},
+		{
+			"name": "Eliminar usuario",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3Yjc3NDcwMmZlNzYxMzVmY2Y0NDU5NiIsImlhdCI6MTc0MDA3NzMwOSwiZXhwIjoxNzQyNjY5MzA5fQ.lljlQJS80G4dprRtAUbCrb3Hzuym3p8dBxDpOvMECzY",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://hackaton-final-backend-production.up.railway.app/api/users/67b77c8747d8b8c1a684d208",
+					"protocol": "https",
+					"host": [
+						"hackaton-final-backend-production",
+						"up",
+						"railway",
+						"app"
+					],
+					"path": [
+						"api",
+						"users",
+						"67b77c8747d8b8c1a684d208"
+					]
+				},
+				"description": "Se necesita que el usuario logeado tenga rol de administrador"
+			},
+			"response": []
+		},
+		{
+			"name": "Obtener todos los usuarios registrados",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3Yjc3NDcwMmZlNzYxMzVmY2Y0NDU5NiIsImlhdCI6MTc0MDA3NzMwOSwiZXhwIjoxNzQyNjY5MzA5fQ.lljlQJS80G4dprRtAUbCrb3Hzuym3p8dBxDpOvMECzY",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://hackaton-final-backend-production.up.railway.app/api/users/",
+					"protocol": "https",
+					"host": [
+						"hackaton-final-backend-production",
+						"up",
+						"railway",
+						"app"
+					],
+					"path": [
+						"api",
+						"users",
+						""
+					]
+				},
+				"description": "Se necesita que el usuario logeado tenga rol de administrador"
+			},
+			"response": []
+		},
+		{
+			"name": "Obtener todos los productos",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://hackaton-final-backend-production.up.railway.app/api/products/",
+					"protocol": "https",
+					"host": [
+						"hackaton-final-backend-production",
+						"up",
+						"railway",
+						"app"
+					],
+					"path": [
+						"api",
+						"products",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Obtener producto por ID",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3Yjc3NDcwMmZlNzYxMzVmY2Y0NDU5NiIsImlhdCI6MTc0MDA3NzMwOSwiZXhwIjoxNzQyNjY5MzA5fQ.lljlQJS80G4dprRtAUbCrb3Hzuym3p8dBxDpOvMECzY",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://hackaton-final-backend-production.up.railway.app/api/products/67afa143d5f3a72b3b19b903",
+					"protocol": "https",
+					"host": [
+						"hackaton-final-backend-production",
+						"up",
+						"railway",
+						"app"
+					],
+					"path": [
+						"api",
+						"products",
+						"67afa143d5f3a72b3b19b903"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Crear un producto",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3Yjc3NDcwMmZlNzYxMzVmY2Y0NDU5NiIsImlhdCI6MTc0MDA3NzMwOSwiZXhwIjoxNzQyNjY5MzA5fQ.lljlQJS80G4dprRtAUbCrb3Hzuym3p8dBxDpOvMECzY",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Cerveza Schauss 330ml Pilsener\",\r\n    \"price\": 18,\r\n    \"description\": \"Cerveza artesanal proveniente de Oxapampa, Perú\",\r\n    \"category\": \"67afa04ad5f3a72b3b19b8fb\",\r\n    \"stock\": 10\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://hackaton-final-backend-production.up.railway.app/api/products/",
+					"protocol": "https",
+					"host": [
+						"hackaton-final-backend-production",
+						"up",
+						"railway",
+						"app"
+					],
+					"path": [
+						"api",
+						"products",
+						""
+					]
+				},
+				"description": "Se requiere que el usuario este logueado y sea administrador"
+			},
+			"response": []
+		},
+		{
+			"name": "Modificar producto",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3Yjc3NDcwMmZlNzYxMzVmY2Y0NDU5NiIsImlhdCI6MTc0MDA3NzMwOSwiZXhwIjoxNzQyNjY5MzA5fQ.lljlQJS80G4dprRtAUbCrb3Hzuym3p8dBxDpOvMECzY",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Cerveza Witting Bier Negra 330ml\",\r\n    \"price\": 11,\r\n    \"stock\": 5,\r\n    \"description\": \"Cerveza artesanal proveniente de Pozuzo\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://hackaton-final-backend-production.up.railway.app/api/products/67b787dc47d8b8c1a684d223",
+					"protocol": "https",
+					"host": [
+						"hackaton-final-backend-production",
+						"up",
+						"railway",
+						"app"
+					],
+					"path": [
+						"api",
+						"products",
+						"67b787dc47d8b8c1a684d223"
+					]
+				},
+				"description": "Se requiere que el usuario este logueado y sea administrador"
+			},
+			"response": []
+		},
+		{
+			"name": "Eliminar producto",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3Yjc3NDcwMmZlNzYxMzVmY2Y0NDU5NiIsImlhdCI6MTc0MDA3NzMwOSwiZXhwIjoxNzQyNjY5MzA5fQ.lljlQJS80G4dprRtAUbCrb3Hzuym3p8dBxDpOvMECzY",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://hackaton-final-backend-production.up.railway.app/api/products/67b78c4b657a611e44fb6d9c",
+					"protocol": "https",
+					"host": [
+						"hackaton-final-backend-production",
+						"up",
+						"railway",
+						"app"
+					],
+					"path": [
+						"api",
+						"products",
+						"67b78c4b657a611e44fb6d9c"
+					]
+				},
+				"description": "Se requiere que el usuario este logeado y sea administrador"
+			},
+			"response": []
+		},
+		{
+			"name": "Obtener todas las categorías de productos",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3Yjc3NDcwMmZlNzYxMzVmY2Y0NDU5NiIsImlhdCI6MTc0MDA3NzMwOSwiZXhwIjoxNzQyNjY5MzA5fQ.lljlQJS80G4dprRtAUbCrb3Hzuym3p8dBxDpOvMECzY",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"para borrar\",\r\n    \"price\": 2,\r\n    \"description\": \"prueba\",\r\n    \"category\": \"67afa04ad5f3a72b3b19b8fb\",\r\n    \"stock\": 1\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://hackaton-final-backend-production.up.railway.app/api/categories/",
+					"protocol": "https",
+					"host": [
+						"hackaton-final-backend-production",
+						"up",
+						"railway",
+						"app"
+					],
+					"path": [
+						"api",
+						"categories",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Obtener categoría por ID",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://hackaton-final-backend-production.up.railway.app/api/categories/67afa04ad5f3a72b3b19b8fb",
+					"protocol": "https",
+					"host": [
+						"hackaton-final-backend-production",
+						"up",
+						"railway",
+						"app"
+					],
+					"path": [
+						"api",
+						"categories",
+						"67afa04ad5f3a72b3b19b8fb"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Crear categoría",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3Yjc3NDcwMmZlNzYxMzVmY2Y0NDU5NiIsImlhdCI6MTc0MDA3NzMwOSwiZXhwIjoxNzQyNjY5MzA5fQ.lljlQJS80G4dprRtAUbCrb3Hzuym3p8dBxDpOvMECzY",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Lacteos\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://hackaton-final-backend-production.up.railway.app/api/categories/",
+					"protocol": "https",
+					"host": [
+						"hackaton-final-backend-production",
+						"up",
+						"railway",
+						"app"
+					],
+					"path": [
+						"api",
+						"categories",
+						""
+					]
+				},
+				"description": "Se requiere que el usuario este logeado y ser administrador"
+			},
+			"response": []
+		},
+		{
+			"name": "Modificar categoría",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3Yjc3NDcwMmZlNzYxMzVmY2Y0NDU5NiIsImlhdCI6MTc0MDA3NzMwOSwiZXhwIjoxNzQyNjY5MzA5fQ.lljlQJS80G4dprRtAUbCrb3Hzuym3p8dBxDpOvMECzY",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Derivados del cacao\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://hackaton-final-backend-production.up.railway.app/api/categories/67b79536657a611e44fb6dac",
+					"protocol": "https",
+					"host": [
+						"hackaton-final-backend-production",
+						"up",
+						"railway",
+						"app"
+					],
+					"path": [
+						"api",
+						"categories",
+						"67b79536657a611e44fb6dac"
+					]
+				},
+				"description": "Es requerido que el usuario este logeado y sea administrador"
+			},
+			"response": []
+		},
+		{
+			"name": "Eliminar categoría",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3Yjc3NDcwMmZlNzYxMzVmY2Y0NDU5NiIsImlhdCI6MTc0MDA3NzMwOSwiZXhwIjoxNzQyNjY5MzA5fQ.lljlQJS80G4dprRtAUbCrb3Hzuym3p8dBxDpOvMECzY",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://hackaton-final-backend-production.up.railway.app/api/categories/67b795ae657a611e44fb6daf",
+					"protocol": "https",
+					"host": [
+						"hackaton-final-backend-production",
+						"up",
+						"railway",
+						"app"
+					],
+					"path": [
+						"api",
+						"categories",
+						"67b795ae657a611e44fb6daf"
+					]
+				},
+				"description": "Es requerido que el usuario este logeado y sea administrador"
+			},
+			"response": []
+		},
+		{
+			"name": "Obtener todas las órdenes",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3Yjc3NDcwMmZlNzYxMzVmY2Y0NDU5NiIsImlhdCI6MTc0MDA3NzMwOSwiZXhwIjoxNzQyNjY5MzA5fQ.lljlQJS80G4dprRtAUbCrb3Hzuym3p8dBxDpOvMECzY",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://hackaton-final-backend-production.up.railway.app/api/orders/",
+					"protocol": "https",
+					"host": [
+						"hackaton-final-backend-production",
+						"up",
+						"railway",
+						"app"
+					],
+					"path": [
+						"api",
+						"orders",
+						""
+					]
+				},
+				"description": "Es requerido que el usuario este logeado y sea administrador"
+			},
+			"response": []
+		},
+		{
+			"name": "Crear una orden",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3Yjc3NDcwMmZlNzYxMzVmY2Y0NDU5NiIsImlhdCI6MTc0MDA3NzMwOSwiZXhwIjoxNzQyNjY5MzA5fQ.lljlQJS80G4dprRtAUbCrb3Hzuym3p8dBxDpOvMECzY",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"products\": [\r\n    {\r\n      \"product\": \"67afa143d5f3a72b3b19b903\",\r\n      \"quantity\": 5\r\n    },\r\n    {\r\n      \"product\": \"67b787dc47d8b8c1a684d223\",\r\n      \"quantity\": 5\r\n    }\r\n  ],\r\n  \"totalPrice\": 552,\r\n  \"status\": \"Pending\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://hackaton-final-backend-production.up.railway.app/api/orders/",
+					"protocol": "https",
+					"host": [
+						"hackaton-final-backend-production",
+						"up",
+						"railway",
+						"app"
+					],
+					"path": [
+						"api",
+						"orders",
+						""
+					]
+				},
+				"description": "Es requerido que el usuario este logeado y sea administrador"
+			},
+			"response": []
+		},
+		{
+			"name": "Obtener una orden por ID",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3Yjc3NDcwMmZlNzYxMzVmY2Y0NDU5NiIsImlhdCI6MTc0MDA3NzMwOSwiZXhwIjoxNzQyNjY5MzA5fQ.lljlQJS80G4dprRtAUbCrb3Hzuym3p8dBxDpOvMECzY",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://hackaton-final-backend-production.up.railway.app/api/orders/67b799b9a28ccd9bb6ac3bf2",
+					"protocol": "https",
+					"host": [
+						"hackaton-final-backend-production",
+						"up",
+						"railway",
+						"app"
+					],
+					"path": [
+						"api",
+						"orders",
+						"67b799b9a28ccd9bb6ac3bf2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Obtener todos los cupones",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3Yjc3NDcwMmZlNzYxMzVmY2Y0NDU5NiIsImlhdCI6MTc0MDA3NzMwOSwiZXhwIjoxNzQyNjY5MzA5fQ.lljlQJS80G4dprRtAUbCrb3Hzuym3p8dBxDpOvMECzY",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://hackaton-final-backend-production.up.railway.app/api/coupons/",
+					"protocol": "https",
+					"host": [
+						"hackaton-final-backend-production",
+						"up",
+						"railway",
+						"app"
+					],
+					"path": [
+						"api",
+						"coupons",
+						""
+					]
+				},
+				"description": "Es requerido que el usuario este logeado y sea administrador"
+			},
+			"response": []
+		},
+		{
+			"name": "Obtener cupón por ID",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3Yjc3NDcwMmZlNzYxMzVmY2Y0NDU5NiIsImlhdCI6MTc0MDA3NzMwOSwiZXhwIjoxNzQyNjY5MzA5fQ.lljlQJS80G4dprRtAUbCrb3Hzuym3p8dBxDpOvMECzY",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://hackaton-final-backend-production.up.railway.app/api/coupons/67b79c38a28ccd9bb6ac3c0f",
+					"protocol": "https",
+					"host": [
+						"hackaton-final-backend-production",
+						"up",
+						"railway",
+						"app"
+					],
+					"path": [
+						"api",
+						"coupons",
+						"67b79c38a28ccd9bb6ac3c0f"
+					]
+				},
+				"description": "Es requerido que el usuario este logeado y sea administrador"
+			},
+			"response": []
+		},
+		{
+			"name": "Crear cupón",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3Yjc3NDcwMmZlNzYxMzVmY2Y0NDU5NiIsImlhdCI6MTc0MDA3NzMwOSwiZXhwIjoxNzQyNjY5MzA5fQ.lljlQJS80G4dprRtAUbCrb3Hzuym3p8dBxDpOvMECzY",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"code\": \"SemSanta234\",\r\n    \"discount\": 0.48,\r\n    \"expirationDate\": \"04/05/2025\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://hackaton-final-backend-production.up.railway.app/api/coupons/",
+					"protocol": "https",
+					"host": [
+						"hackaton-final-backend-production",
+						"up",
+						"railway",
+						"app"
+					],
+					"path": [
+						"api",
+						"coupons",
+						""
+					]
+				},
+				"description": "Es requerido que el usuario este logeado y sea administrador"
+			},
+			"response": []
+		},
+		{
+			"name": "Modificar cupón",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3Yjc3NDcwMmZlNzYxMzVmY2Y0NDU5NiIsImlhdCI6MTc0MDA3NzMwOSwiZXhwIjoxNzQyNjY5MzA5fQ.lljlQJS80G4dprRtAUbCrb3Hzuym3p8dBxDpOvMECzY",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"code\": \"Apertura1201Oxa\",\r\n    \"discount\": 0.8\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://hackaton-final-backend-production.up.railway.app/api/coupons/67b79c38a28ccd9bb6ac3c0f",
+					"protocol": "https",
+					"host": [
+						"hackaton-final-backend-production",
+						"up",
+						"railway",
+						"app"
+					],
+					"path": [
+						"api",
+						"coupons",
+						"67b79c38a28ccd9bb6ac3c0f"
+					]
+				},
+				"description": "Es requerido que el usuario este logeado y sea administrador"
+			},
+			"response": []
+		},
+		{
+			"name": "Eliminar un cupon",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3Yjc3NDcwMmZlNzYxMzVmY2Y0NDU5NiIsImlhdCI6MTc0MDA3NzMwOSwiZXhwIjoxNzQyNjY5MzA5fQ.lljlQJS80G4dprRtAUbCrb3Hzuym3p8dBxDpOvMECzY",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://hackaton-final-backend-production.up.railway.app/api/coupons/67b7a36af32672ec0e7aa314",
+					"protocol": "https",
+					"host": [
+						"hackaton-final-backend-production",
+						"up",
+						"railway",
+						"app"
+					],
+					"path": [
+						"api",
+						"coupons",
+						"67b7a36af32672ec0e7aa314"
+					]
+				},
+				"description": "Es requerido que el usuario este logeado y sea administrador"
+			},
+			"response": []
+		}
+	]
+}

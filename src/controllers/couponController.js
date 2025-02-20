@@ -68,6 +68,7 @@ exports.updateCoupon = async (req, res) => {
     }
 };
 
+// Para borrar cupon
 exports.deleteCoupon = async (req, res) => {
     try {
         const coupon = await Coupon.findById(req.params.id);
